@@ -40,17 +40,19 @@ public class JenkinsTests {
 
         // object parent of all classes o yuzden casting yapmaliyiz yukarida
 
+        System.out.println(bookingdates);
+
 
         //validate with map
-        assertEquals("Jim",actualData.get("firstname"));
-        assertEquals("Jackson",actualData.get("lastname"));
-        assertEquals(982,actualData.get("totalprice"));
-        assertEquals(false,actualData.get("depositpaid"));
-        assertEquals("2018-12-06",bookingdates.get("checkin"));
-        assertEquals("2019-09-05",bookingdates.get("checkout"));
+        assertEquals("Susan",actualData.get("firstname"));
+        assertEquals("Jones",actualData.get("lastname"));
+        assertEquals(949,actualData.get("totalprice"));
+        assertEquals(true,actualData.get("depositpaid"));
+        assertEquals("2016-07-29",bookingdates.get("checkin"));
+        assertEquals("2020-05-30",bookingdates.get("checkout"));
 
         //hamcrest matcher ile validate
-        response.then().body("Jim",equalTo("Jim"));
+        response.then().body("firstname",equalTo("Susan"));
 
 
 
